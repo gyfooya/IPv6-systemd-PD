@@ -1,0 +1,5 @@
+[Match]
+Name=enp45s0
+
+[Network]
+Bridge=br0
