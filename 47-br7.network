@@ -1,0 +1,15 @@
+[Match]
+Name=br7
+
+[Network]
+Address=2a01:xxx:xxx:xxxx::1/64
+IPv6SendRA=yes
+ConfigureWithoutCarrier=yes
+
+[Address]
+IPv6DuplicateAddressDetection=0
+
+[IPv6SendRA]
+Managed=no
+OtherInformation=yes
+RouterLifetimeSec=1800
