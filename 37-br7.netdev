@@ -1,0 +1,6 @@
+[NetDev]
+Name=br7
+Kind=bridge
+
+[Bridge]
+# This allows the bridge to come up without any attached interfaces
