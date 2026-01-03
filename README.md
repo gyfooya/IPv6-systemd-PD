@@ -48,3 +48,33 @@ IPv6 Prefix Delegation with systemD
 
 # Sysctl (modifiy kernel parameters at runtime)
 - /etc/sysctl/99-ipv6.conf
+
+
+# MEMO - IPv6 Address Space (128 bits)
+<pre>
+┌──────────────────────────────────────────────────────────────────┐
+│ ::                            All IPv6 Global                    │
+├──────────────────────────────────────────────────────────────────┤
+│ ::/128                        Loopback                           │
+│ (::1)  → Test local à la machine                                 │
+├──────────────────────────────────────────────────────────────────┤
+│ fe80::/10                     Link-Local                         │
+│ (fe80::) → LAN, Neighbor Discovery, scope link                   │
+├──────────────────────────────────────────────────────────────────┤
+│ fd00::/8                      Unique Local Address (ULA)         │
+│ (fdxx:xxxx:xxxx::/48) → LAN interne, non routable Internet       │
+├──────────────────────────────────────────────────────────────────┤
+│ 2000::/3                      Global Unicast                     │
+│ (2000::) → routable Internet, préfixes fournis par FAI           │
+├──────────────────────────────────────────────────────────────────┤
+│ ff00::/8                      Multicast                          │
+│ (ff00::) → diffusion à un groupe de machines                     │
+│   - ff02::1 → tous les nœuds sur le lien local                   │
+│   - ff02::2 → tous les routeurs sur le lien local                │
+├──────────────────────────────────────────────────────────────────┤
+│ Anycast                       (assigné à plusieurs interfaces)   │
+│ dérivé de Global Unicast → routé vers le plus proche             │
+└──────────────────────────────────────────────────────────────────┘
+</pre>
+
+
